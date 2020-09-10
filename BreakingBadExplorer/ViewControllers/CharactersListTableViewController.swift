@@ -10,6 +10,8 @@ import UIKit
 
 class CharactersListTableViewController: UITableViewController {
 
+	private var viewModel = CharactersListViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
