@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		151FCE08250A8A6F00E05FEA /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151FCE07250A8A6F00E05FEA /* Character.swift */; };
 		15CECE5E250A56B400945845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE5D250A56B400945845 /* AppDelegate.swift */; };
 		15CECE60250A56B400945845 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE5F250A56B400945845 /* SceneDelegate.swift */; };
 		15CECE62250A56B400945845 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE61250A56B400945845 /* ViewController.swift */; };
@@ -15,6 +16,12 @@
 		15CECE6A250A56B600945845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15CECE68250A56B600945845 /* LaunchScreen.storyboard */; };
 		15CECE75250A56B700945845 /* BreakingBadExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE74250A56B700945845 /* BreakingBadExplorerTests.swift */; };
 		15CECE80250A56B700945845 /* BreakingBadExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE7F250A56B700945845 /* BreakingBadExplorerUITests.swift */; };
+		15CECE8F250A5C9100945845 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 15CECE8E250A5C9100945845 /* Alamofire */; };
+		15CECE91250A5CF100945845 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE90250A5CF100945845 /* NetworkManagerTests.swift */; };
+		15CECE95250A5EA900945845 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE94250A5EA900945845 /* NetworkManager.swift */; };
+		15CECE9B250A728200945845 /* Mocker in Frameworks */ = {isa = PBXBuildFile; productRef = 15CECE9A250A728200945845 /* Mocker */; };
+		15CECE9D250A7A6000945845 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = 15CECE9C250A7A6000945845 /* characters.json */; };
+		15CECE9F250A844F00945845 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE9E250A844F00945845 /* MockedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		151FCE07250A8A6F00E05FEA /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		15CECE5A250A56B400945845 /* BreakingBadExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15CECE5D250A56B400945845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15CECE5F250A56B400945845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +57,10 @@
 		15CECE7B250A56B700945845 /* BreakingBadExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreakingBadExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15CECE7F250A56B700945845 /* BreakingBadExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadExplorerUITests.swift; sourceTree = "<group>"; };
 		15CECE81250A56B700945845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15CECE90250A5CF100945845 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		15CECE94250A5EA900945845 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		15CECE9C250A7A6000945845 /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
+		15CECE9E250A844F00945845 /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15CECE8F250A5C9100945845 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15CECE9B250A728200945845 /* Mocker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +90,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		151FCE06250A84C800E05FEA /* MockJSON Files */ = {
+			isa = PBXGroup;
+			children = (
+				15CECE9C250A7A6000945845 /* characters.json */,
+			);
+			path = "MockJSON Files";
+			sourceTree = "<group>";
+		};
+		151FCE09250A8A7C00E05FEA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				151FCE07250A8A6F00E05FEA /* Character.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		151FCE0A250A8A8100E05FEA /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				15CECE94250A5EA900945845 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		151FCE0B250A8A8E00E05FEA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				15CECE61250A56B400945845 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		151FCE0C250A8A9600E05FEA /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				15CECE5D250A56B400945845 /* AppDelegate.swift */,
+				15CECE5F250A56B400945845 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		151FCE0D250A8AA000E05FEA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				15CECE63250A56B400945845 /* Main.storyboard */,
+				15CECE68250A56B600945845 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		15CECE51250A56B400945845 = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +163,12 @@
 		15CECE5C250A56B400945845 /* BreakingBadExplorer */ = {
 			isa = PBXGroup;
 			children = (
-				15CECE5D250A56B400945845 /* AppDelegate.swift */,
-				15CECE5F250A56B400945845 /* SceneDelegate.swift */,
-				15CECE61250A56B400945845 /* ViewController.swift */,
-				15CECE63250A56B400945845 /* Main.storyboard */,
+				151FCE0C250A8A9600E05FEA /* Delegates */,
+				151FCE0B250A8A8E00E05FEA /* ViewControllers */,
+				151FCE0A250A8A8100E05FEA /* NetworkManager */,
+				151FCE09250A8A7C00E05FEA /* Models */,
+				151FCE0D250A8AA000E05FEA /* Storyboards */,
 				15CECE66250A56B600945845 /* Assets.xcassets */,
-				15CECE68250A56B600945845 /* LaunchScreen.storyboard */,
 				15CECE6B250A56B600945845 /* Info.plist */,
 			);
 			path = BreakingBadExplorer;
@@ -114,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				15CECE74250A56B700945845 /* BreakingBadExplorerTests.swift */,
+				15CECEA0250A846E00945845 /* NetworkManager */,
 				15CECE76250A56B700945845 /* Info.plist */,
 			);
 			path = BreakingBadExplorerTests;
@@ -126,6 +191,16 @@
 				15CECE81250A56B700945845 /* Info.plist */,
 			);
 			path = BreakingBadExplorerUITests;
+			sourceTree = "<group>";
+		};
+		15CECEA0250A846E00945845 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				15CECE90250A5CF100945845 /* NetworkManagerTests.swift */,
+				151FCE06250A84C800E05FEA /* MockJSON Files */,
+				15CECE9E250A844F00945845 /* MockedData.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +219,9 @@
 			dependencies = (
 			);
 			name = BreakingBadExplorer;
+			packageProductDependencies = (
+				15CECE8E250A5C9100945845 /* Alamofire */,
+			);
 			productName = BreakingBadExplorer;
 			productReference = 15CECE5A250A56B400945845 /* BreakingBadExplorer.app */;
 			productType = "com.apple.product-type.application";
@@ -162,6 +240,9 @@
 				15CECE72250A56B700945845 /* PBXTargetDependency */,
 			);
 			name = BreakingBadExplorerTests;
+			packageProductDependencies = (
+				15CECE9A250A728200945845 /* Mocker */,
+			);
 			productName = BreakingBadExplorerTests;
 			productReference = 15CECE70250A56B700945845 /* BreakingBadExplorerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -216,6 +297,10 @@
 				Base,
 			);
 			mainGroup = 15CECE51250A56B400945845;
+			packageReferences = (
+				15CECE8D250A5C9100945845 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				15CECE99250A728200945845 /* XCRemoteSwiftPackageReference "Mocker" */,
+			);
 			productRefGroup = 15CECE5B250A56B400945845 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -242,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15CECE9D250A7A6000945845 /* characters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +347,8 @@
 			files = (
 				15CECE62250A56B400945845 /* ViewController.swift in Sources */,
 				15CECE5E250A56B400945845 /* AppDelegate.swift in Sources */,
+				151FCE08250A8A6F00E05FEA /* Character.swift in Sources */,
+				15CECE95250A5EA900945845 /* NetworkManager.swift in Sources */,
 				15CECE60250A56B400945845 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +357,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15CECE91250A5CF100945845 /* NetworkManagerTests.swift in Sources */,
 				15CECE75250A56B700945845 /* BreakingBadExplorerTests.swift in Sources */,
+				15CECE9F250A844F00945845 /* MockedData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +674,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		15CECE8D250A5C9100945845 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+		15CECE99250A728200945845 /* XCRemoteSwiftPackageReference "Mocker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WeTransfer/Mocker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		15CECE8E250A5C9100945845 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15CECE8D250A5C9100945845 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		15CECE9A250A728200945845 /* Mocker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15CECE99250A728200945845 /* XCRemoteSwiftPackageReference "Mocker" */;
+			productName = Mocker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 15CECE52250A56B400945845 /* Project object */;
 }
