@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		151FCE08250A8A6F00E05FEA /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151FCE07250A8A6F00E05FEA /* Character.swift */; };
+		151FCE10250A8FE200E05FEA /* CharactersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151FCE0F250A8FE200E05FEA /* CharactersListTableViewController.swift */; };
 		15CECE5E250A56B400945845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE5D250A56B400945845 /* AppDelegate.swift */; };
 		15CECE60250A56B400945845 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE5F250A56B400945845 /* SceneDelegate.swift */; };
-		15CECE62250A56B400945845 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE61250A56B400945845 /* ViewController.swift */; };
 		15CECE65250A56B400945845 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15CECE63250A56B400945845 /* Main.storyboard */; };
 		15CECE67250A56B600945845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15CECE66250A56B600945845 /* Assets.xcassets */; };
 		15CECE6A250A56B600945845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15CECE68250A56B600945845 /* LaunchScreen.storyboard */; };
@@ -43,10 +43,10 @@
 
 /* Begin PBXFileReference section */
 		151FCE07250A8A6F00E05FEA /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		151FCE0F250A8FE200E05FEA /* CharactersListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListTableViewController.swift; sourceTree = "<group>"; };
 		15CECE5A250A56B400945845 /* BreakingBadExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15CECE5D250A56B400945845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15CECE5F250A56B400945845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		15CECE61250A56B400945845 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		15CECE64250A56B400945845 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15CECE66250A56B600945845 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15CECE69250A56B600945845 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		151FCE0B250A8A8E00E05FEA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				15CECE61250A56B400945845 /* ViewController.swift */,
+				151FCE0F250A8FE200E05FEA /* CharactersListTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -138,6 +138,13 @@
 				15CECE68250A56B600945845 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		151FCE0E250A8F5900E05FEA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		15CECE51250A56B400945845 = {
@@ -165,6 +172,7 @@
 			children = (
 				151FCE0C250A8A9600E05FEA /* Delegates */,
 				151FCE0B250A8A8E00E05FEA /* ViewControllers */,
+				151FCE0E250A8F5900E05FEA /* ViewModels */,
 				151FCE0A250A8A8100E05FEA /* NetworkManager */,
 				151FCE09250A8A7C00E05FEA /* Models */,
 				151FCE0D250A8AA000E05FEA /* Storyboards */,
@@ -345,8 +353,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15CECE62250A56B400945845 /* ViewController.swift in Sources */,
 				15CECE5E250A56B400945845 /* AppDelegate.swift in Sources */,
+				151FCE10250A8FE200E05FEA /* CharactersListTableViewController.swift in Sources */,
 				151FCE08250A8A6F00E05FEA /* Character.swift in Sources */,
 				15CECE95250A5EA900945845 /* NetworkManager.swift in Sources */,
 				15CECE60250A56B400945845 /* SceneDelegate.swift in Sources */,
