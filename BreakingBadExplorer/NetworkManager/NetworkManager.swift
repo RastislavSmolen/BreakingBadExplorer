@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import AlamofireImage
 
 enum APIError: Error {
 	case failed(message: String)
@@ -16,10 +17,10 @@ enum APIError: Error {
 enum Endpoint {
 	case characters
 
-	var url: URL? {
+	var url: URL {
 		let base = "https://breakingbadapi.com/api"
 		switch self {
-		case .characters: return URL(string: base + "/characters")
+		case .characters: return URL(string: base + "/characters")!
 		}
 	}
 }
@@ -33,10 +34,7 @@ class NetworkManager {
 	}
 
 	func getCharacters(_ completion: @escaping (Result<[Character], APIError>) -> Void) {
-		guard let url = Endpoint.characters.url else {
-			return completion(.failure(.failed(message: "Invalid URL")))
-		}
-		session.request(url)
+		session.request(Endpoint.characters.url)
 			.responseDecodable(of: [Character].self) { response in
 				switch response.result {
 				case .success(let characters):
@@ -45,6 +43,14 @@ class NetworkManager {
 					print(error)
 					completion(.failure(.failed(message: error.localizedDescription)))
 				}
+		}
+	}
+
+	func prefetch(urls: [URL], completion: (() -> Void)? = nil) {
+		let requests = urls.map{ URLRequest(url: $0) }
+		ImageDownloader().download(requests) { (dataResponse) in
+			// We do not need to know for the success/failure of the image download
+			completion?()
 		}
 	}
 }

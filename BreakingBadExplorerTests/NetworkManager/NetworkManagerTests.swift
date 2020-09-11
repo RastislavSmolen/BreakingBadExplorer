@@ -29,7 +29,7 @@ class NetworkManagerTests: XCTestCase {
 
 	func test_WhenCharactersAPICalled_ThenListIsRetrieved() {
 		// given
-		let mock = Mock(url: Endpoint.characters.url!, dataType: .json, statusCode: 200, data: [
+		let mock = Mock(url: Endpoint.characters.url, dataType: .json, statusCode: 200, data: [
 			.get: MockedData.getCharactersSuccessJSON
 		])
 		mock.register()
@@ -51,7 +51,7 @@ class NetworkManagerTests: XCTestCase {
 
 	func test_WhenCharactersAPICalled_ThenErrorIsThrown() {
 		// given
-		let mock = Mock(url: Endpoint.characters.url!, dataType: .json, statusCode: 429, data: [
+		let mock = Mock(url: Endpoint.characters.url, dataType: .json, statusCode: 429, data: [
 			.get: Data()
 		])
 		mock.register()
@@ -65,6 +65,25 @@ class NetworkManagerTests: XCTestCase {
 			case .success: XCTFail("This API response is supposed to fail")
 			case .failure(let error): print(error)
 			}
+			exp.fulfill()
+		}
+
+		wait(for: [exp], timeout: 1)
+	}
+
+	func test_WhenPrefetchImagesIsCalled_ThenImageIsDownloaded() {
+		// given
+		let url = URL(string: "https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg")!
+		let mock = Mock(url: url, dataType: .imagePNG, statusCode: 200, data: [
+			.get: MockedData.walterWhiteImage
+		])
+		mock.register()
+
+		let exp = expectation(description: "Waiting to download image")
+
+		// when
+		sut.prefetch(urls: [url]) {
+			// then
 			exp.fulfill()
 		}
 

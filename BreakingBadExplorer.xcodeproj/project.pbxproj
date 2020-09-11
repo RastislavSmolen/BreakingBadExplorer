@@ -15,6 +15,7 @@
 		151FCE1A250A959000E05FEA /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151FCE19250A959000E05FEA /* CharacterViewModel.swift */; };
 		151FCE1D250AA74800E05FEA /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 151FCE1C250AA74800E05FEA /* AlamofireImage */; };
 		151FCE23250B71B000E05FEA /* CharactersListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151FCE22250B71B000E05FEA /* CharactersListViewModelTests.swift */; };
+		151FCE25250B76FA00E05FEA /* Walter White.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151FCE24250B76FA00E05FEA /* Walter White.jpg */; };
 		15CECE5E250A56B400945845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE5D250A56B400945845 /* AppDelegate.swift */; };
 		15CECE60250A56B400945845 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE5F250A56B400945845 /* SceneDelegate.swift */; };
 		15CECE65250A56B400945845 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15CECE63250A56B400945845 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		151FCE17250A957900E05FEA /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
 		151FCE19250A959000E05FEA /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		151FCE22250B71B000E05FEA /* CharactersListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersListViewModelTests.swift; sourceTree = "<group>"; };
+		151FCE24250B76FA00E05FEA /* Walter White.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Walter White.jpg"; sourceTree = "<group>"; };
 		15CECE5A250A56B400945845 /* BreakingBadExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15CECE5D250A56B400945845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15CECE5F250A56B400945845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,12 +104,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		151FCE06250A84C800E05FEA /* MockJSON Files */ = {
+		151FCE06250A84C800E05FEA /* Mock Resources */ = {
 			isa = PBXGroup;
 			children = (
+				151FCE24250B76FA00E05FEA /* Walter White.jpg */,
 				15CECE9C250A7A6000945845 /* characters.json */,
 			);
-			path = "MockJSON Files";
+			path = "Mock Resources";
 			sourceTree = "<group>";
 		};
 		151FCE09250A8A7C00E05FEA /* Models */ = {
@@ -246,7 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				15CECE90250A5CF100945845 /* NetworkManagerTests.swift */,
-				151FCE06250A84C800E05FEA /* MockJSON Files */,
+				151FCE06250A84C800E05FEA /* Mock Resources */,
 				15CECE9E250A844F00945845 /* MockedData.swift */,
 			);
 			path = NetworkManager;
@@ -380,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15CECE9D250A7A6000945845 /* characters.json in Resources */,
+				151FCE25250B76FA00E05FEA /* Walter White.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

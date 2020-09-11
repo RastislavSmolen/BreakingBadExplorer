@@ -42,6 +42,9 @@ class CharactersListViewModel {
 	}
 
 	func prefetchImages(for indexPaths: [IndexPath]) {
-		
+		let urls = indexPaths
+			.map { self[$0].character.img }
+			.compactMap { URL(string: $0) }
+		networkManager.prefetch(urls: urls)
 	}
 }
