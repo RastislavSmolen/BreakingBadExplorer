@@ -37,6 +37,13 @@
             BlueprintName = "BreakingBadExplorer"
             ReferencedContainer = "container:BreakingBadExplorer.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "15CECE6F250A56B700945845"
+            BuildableName = "BreakingBadExplorerTests.xctest"
+            BlueprintName = "BreakingBadExplorerTests"
+            ReferencedContainer = "container:BreakingBadExplorer.xcodeproj">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference

@@ -54,7 +54,7 @@ class CharactersListViewModel {
 	}
 
 	func search(text: String?) {
-		func informDelegate() {
+		func informDelegateOnMainThread() {
 			DispatchQueue.main.async {
 				self.delegate.searchResultsUpdated()
 			}
@@ -63,10 +63,10 @@ class CharactersListViewModel {
 		DispatchQueue.global(qos: .background).async {
 			guard let text = text?.lowercased(), text.count > 0 else {
 				self.viewModels = self.masterViewModels
-				return informDelegate()
+				return informDelegateOnMainThread()
 			}
 			self.viewModels = self.masterViewModels.filter { $0.name.lowercased().contains(text) }
-			informDelegate()
+			informDelegateOnMainThread()
 		}
 	}
 }

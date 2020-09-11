@@ -18,15 +18,18 @@ extension CharactersListViewModelTests {
 	3. Text and Season filter
 	*/
 
-	func test_WhenSearchWithText_ThenCorrectCaseInsensitiveResultsReturned() {
-		// given
-		let characters = try! JSONDecoder()
+	private func getMockCharacters() -> [CharacterViewModel] {
+		try! JSONDecoder()
 			.decode([Character].self, from: MockedData.getCharactersSuccessJSON)
 			.map { CharacterViewModel(character: $0) }
+	}
+
+	func test_WhenSearchWithText_ThenCorrectCaseInsensitiveResultsReturned() {
+		// given
 		let text = "white"
 		let exp = expectation(description: "Waiting for search results")
 
-		initialiseSUT(viewModels: characters)
+		initialiseSUT(viewModels: getMockCharacters())
 
 		delegateStub.didCallSearchResultsUpdated = {
 			// then
@@ -48,12 +51,9 @@ extension CharactersListViewModelTests {
 
 	func test_WhenSearchWithEmptyText_ThenAllResultsReturned() {
 		// given
-		let characters = try! JSONDecoder()
-			.decode([Character].self, from: MockedData.getCharactersSuccessJSON)
-			.map { CharacterViewModel(character: $0) }
 		let exp = expectation(description: "Waiting for search results")
 
-		initialiseSUT(viewModels: characters)
+		initialiseSUT(viewModels: getMockCharacters())
 
 		delegateStub.didCallSearchResultsUpdated = {
 			// then
@@ -69,12 +69,9 @@ extension CharactersListViewModelTests {
 
 	func test_WhenSearchWithNilText_ThenAllResultsReturned() {
 		// given
-		let characters = try! JSONDecoder()
-			.decode([Character].self, from: MockedData.getCharactersSuccessJSON)
-			.map { CharacterViewModel(character: $0) }
 		let exp = expectation(description: "Waiting for search results")
 
-		initialiseSUT(viewModels: characters)
+		initialiseSUT(viewModels: getMockCharacters())
 
 		delegateStub.didCallSearchResultsUpdated = {
 			// then
