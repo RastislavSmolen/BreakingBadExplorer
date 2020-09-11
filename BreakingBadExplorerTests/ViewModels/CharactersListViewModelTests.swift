@@ -29,8 +29,8 @@ class CharactersListViewModelTests: XCTestCase {
 
 	private func mockViewModels() -> [CharacterViewModel] {
 		[
-			CharacterViewModel(character: Character(name: "Walter White", img: "https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg")),
-			CharacterViewModel(character: Character(name: "Jesse Pinkman", img: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Jesse_Pinkman2.jpg/220px-Jesse_Pinkman2.jpg"))
+			CharacterViewModel(character: Character(name: "Walter White", img: "https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg", appearance: [.one, .two, .three, .four, .five])),
+			CharacterViewModel(character: Character(name: "Jesse Pinkman", img: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Jesse_Pinkman2.jpg/220px-Jesse_Pinkman2.jpg", appearance: [.one, .two, .three, .four, .five]))
 		]
 	}
 

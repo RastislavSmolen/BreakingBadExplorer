@@ -53,7 +53,7 @@ class CharactersListViewModel {
 		networkManager.prefetch(urls: urls)
 	}
 
-	func search(text: String?) {
+	func search(text: String?, in season: Season? = nil) {
 		func informDelegateOnMainThread() {
 			DispatchQueue.main.async {
 				self.delegate.searchResultsUpdated()
@@ -61,11 +61,30 @@ class CharactersListViewModel {
 		}
 
 		DispatchQueue.global(qos: .background).async {
-			guard let text = text?.lowercased(), text.count > 0 else {
+			if (text == nil || text?.count == 0) && season == nil {
 				self.viewModels = self.masterViewModels
 				return informDelegateOnMainThread()
 			}
-			self.viewModels = self.masterViewModels.filter { $0.name.lowercased().contains(text) }
+
+			self.viewModels = self.masterViewModels.filter { (viewModel) -> Bool in
+				/*
+				If text is available then apply it's filter
+				If season is available then apply it's filter
+				If both are available then apply both filters
+				*/
+
+				var nameMatched = true
+				if let text = text?.lowercased() {
+					nameMatched = viewModel.name.lowercased().contains(text)
+				}
+
+				var seasonMatched = true
+				if let season = season {
+					seasonMatched = viewModel.character.appearance.contains(season)
+				}
+
+				return nameMatched && seasonMatched
+			}
 			informDelegateOnMainThread()
 		}
 	}
