@@ -15,6 +15,8 @@ protocol CharactersListViewModelDelegate {
 
 class CharactersListViewModel {
 
+	let title = "Characters"
+
 	private let delegate: CharactersListViewModelDelegate
 	private(set) var viewModels: [CharacterViewModel]
 	private let networkManager: NetworkManager

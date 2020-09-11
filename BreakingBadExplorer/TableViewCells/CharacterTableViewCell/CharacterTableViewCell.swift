@@ -15,6 +15,8 @@ class CharacterTableViewCell: UITableViewCell {
 	@IBOutlet weak var characterImageView: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
 
+	private static let placeholderImage = UIImage(named: "Logo")!
+
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		containerView.layer.cornerRadius = 5
@@ -22,18 +24,15 @@ class CharacterTableViewCell: UITableViewCell {
 
 	func set(_ viewModel: CharacterViewModel) {
 		nameLabel.text = viewModel.name
+		setImage(from: viewModel.imageURL)
+	}
 
+	private func setImage(from url: URL?) {
 		characterImageView.af.cancelImageRequest()
-
-		if let url = viewModel.imageURL {
-			characterImageView.af.setImage(withURL: url) { [weak self] (dataResponse) in
-				switch dataResponse.result {
-				case .failure: self?.characterImageView.image = nil
-				default: break
-				}
-			}
-		} else {
+		guard let url = url else {
 			characterImageView.image = nil
+			return
 		}
+		characterImageView.af.setImage(withURL: url, placeholderImage: CharacterTableViewCell.placeholderImage)
 	}
 }

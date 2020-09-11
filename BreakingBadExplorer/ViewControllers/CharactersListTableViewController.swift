@@ -24,6 +24,8 @@ class CharactersListTableViewController: UITableViewController {
 		tableView.register(nib, forCellReuseIdentifier: Constants.reuseId)
 
 		viewModel.loadCharacters()
+
+		title = viewModel.title
     }
 
     // MARK: - Table view data source
