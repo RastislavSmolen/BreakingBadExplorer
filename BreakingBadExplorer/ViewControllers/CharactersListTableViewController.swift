@@ -16,35 +16,59 @@ class CharactersListTableViewController: UITableViewController {
 	}
 
 	private lazy var viewModel = CharactersListViewModel(delegate: self)
+	private lazy var searchController = UISearchController(searchResultsController: nil)
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
 		let nib = UINib(nibName: Constants.characterTableViewCell, bundle: nil)
 		tableView.register(nib, forCellReuseIdentifier: Constants.reuseId)
 
 		viewModel.loadCharacters()
-
+		setupSearchBar()
 		title = viewModel.title
-    }
+	}
 
-    // MARK: - Table view data source
+	private func setupSearchBar() {
+		searchController.searchResultsUpdater = self
+		searchController.obscuresBackgroundDuringPresentation = false
+		searchController.searchBar.placeholder = "Search Characters"
+		searchController.automaticallyShowsCancelButton = true
+		navigationItem.searchController = searchController
+		definesPresentationContext = true
+	}
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	// MARK: - Table view data source
+
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		viewModel.viewModels.count
-    }
+	}
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reuseId, for: indexPath) as! CharacterTableViewCell
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reuseId, for: indexPath) as! CharacterTableViewCell
 		cell.set(viewModel[indexPath])
-        return cell
-    }
+		return cell
+	}
 
-    // MARK: - Navigation
+	// MARK: - Navigation
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-    }
+	}
+}
+
+extension CharactersListTableViewController: UITableViewDataSourcePrefetching {
+
+	func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+		viewModel.prefetchImages(for: indexPaths)
+	}
+}
+
+extension CharactersListTableViewController: UISearchResultsUpdating {
+
+	func updateSearchResults(for searchController: UISearchController) {
+		viewModel.search(text: searchController.searchBar.text, in: nil)
+	}
 }
 
 extension CharactersListTableViewController: CharactersListViewModelDelegate {
@@ -59,12 +83,5 @@ extension CharactersListTableViewController: CharactersListViewModelDelegate {
 
 	func searchResultsUpdated() {
 		tableView.reloadData()
-	}
-}
-
-extension CharactersListTableViewController: UITableViewDataSourcePrefetching {
-
-	func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-		viewModel.prefetchImages(for: indexPaths)
 	}
 }

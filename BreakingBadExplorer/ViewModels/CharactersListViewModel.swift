@@ -31,14 +31,15 @@ class CharactersListViewModel {
 	}
 
 	subscript(indexPath: IndexPath) -> CharacterViewModel {
-		self.viewModels[indexPath.item]
+		viewModels[indexPath.item]
 	}
 
 	func loadCharacters() {
 		networkManager.getCharacters { (result) in
 			switch result {
 			case .success(let characters):
-				self.viewModels = characters.map { CharacterViewModel(character: $0) }
+				self.masterViewModels = characters.map { CharacterViewModel(character: $0) }
+				self.viewModels = self.masterViewModels
 				self.delegate.loadCharactersSucceeded()
 			case .failure(let error):
 				self.delegate.loadCharactersFailed(with: error.localizedDescription)
