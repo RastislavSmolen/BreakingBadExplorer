@@ -13,6 +13,9 @@ struct CharacterViewModel {
 	let name: String
 	let imageURL: URL?
 	let appearance: [Season]
+	let occupation: [String]
+	let nickname: String
+	let status: String
 
 	let character: Character
 
@@ -20,6 +23,9 @@ struct CharacterViewModel {
 		name = character.name
 		imageURL = URL(string: character.img)
 		appearance = character.appearance
+		occupation = character.occupation
+		nickname = character.nickname
+		status =  character.status
 
 		self.character = character
 	}
