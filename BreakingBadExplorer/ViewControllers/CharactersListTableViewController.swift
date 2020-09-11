@@ -56,6 +56,10 @@ extension CharactersListTableViewController: CharactersListViewModelDelegate {
 	func loadCharactersFailed(with message: String) {
 		// Show alert
 	}
+
+	func searchResultsUpdated() {
+		tableView.reloadData()
+	}
 }
 
 extension CharactersListTableViewController: UITableViewDataSourcePrefetching {

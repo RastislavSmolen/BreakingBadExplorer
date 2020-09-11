@@ -11,6 +11,7 @@ import Foundation
 protocol CharactersListViewModelDelegate {
 	func loadCharactersSucceeded()
 	func loadCharactersFailed(with message: String)
+	func searchResultsUpdated()
 }
 
 class CharactersListViewModel {
@@ -18,12 +19,14 @@ class CharactersListViewModel {
 	let title = "Characters"
 
 	private let delegate: CharactersListViewModelDelegate
+	private var masterViewModels: [CharacterViewModel]
 	private(set) var viewModels: [CharacterViewModel]
 	private let networkManager: NetworkManager
 
 	init(delegate: CharactersListViewModelDelegate, viewModels: [CharacterViewModel] = [], networkManager: NetworkManager = .init()) {
 		self.delegate = delegate
 		self.viewModels = viewModels
+		masterViewModels = viewModels
 		self.networkManager = networkManager
 	}
 
@@ -48,5 +51,22 @@ class CharactersListViewModel {
 			.map { self[$0].character.img }
 			.compactMap { URL(string: $0) }
 		networkManager.prefetch(urls: urls)
+	}
+
+	func search(text: String?) {
+		func informDelegate() {
+			DispatchQueue.main.async {
+				self.delegate.searchResultsUpdated()
+			}
+		}
+
+		DispatchQueue.global(qos: .background).async {
+			guard let text = text?.lowercased(), text.count > 0 else {
+				self.viewModels = self.masterViewModels
+				return informDelegate()
+			}
+			self.viewModels = self.masterViewModels.filter { $0.name.lowercased().contains(text) }
+			informDelegate()
+		}
 	}
 }

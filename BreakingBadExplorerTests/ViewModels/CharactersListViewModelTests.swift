@@ -11,9 +11,9 @@ import XCTest
 
 class CharactersListViewModelTests: XCTestCase {
 
-	private var sut: CharactersListViewModel!
-	private var delegateStub: DelegateStub!
-	private var mockNetworkManager: MockNetworkManager!
+	var sut: CharactersListViewModel!
+	var delegateStub: DelegateStub!
+	var mockNetworkManager: MockNetworkManager!
 
     override func tearDownWithError() throws {
 		mockNetworkManager = nil
@@ -21,7 +21,7 @@ class CharactersListViewModelTests: XCTestCase {
 		sut = nil
     }
 
-	private func initialiseSUT(viewModels: [CharacterViewModel] = []) {
+	func initialiseSUT(viewModels: [CharacterViewModel] = []) {
 		mockNetworkManager = MockNetworkManager()
 		delegateStub = DelegateStub()
 		sut = CharactersListViewModel(delegate: delegateStub, viewModels: viewModels, networkManager: mockNetworkManager)
@@ -123,6 +123,7 @@ class DelegateStub: CharactersListViewModelDelegate {
 
 	var didLoadCharactersSucceeded: (() -> Void)?
 	var didLoadCharactersFailed: (() -> Void)?
+	var didCallSearchResultsUpdated: (() -> Void)?
 
 	func loadCharactersSucceeded() {
 		didLoadCharactersSucceeded?()
@@ -130,5 +131,9 @@ class DelegateStub: CharactersListViewModelDelegate {
 
 	func loadCharactersFailed(with message: String) {
 		didLoadCharactersFailed?()
+	}
+
+	func searchResultsUpdated() {
+		didCallSearchResultsUpdated?()
 	}
 }
