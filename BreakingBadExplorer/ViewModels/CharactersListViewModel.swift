@@ -48,9 +48,7 @@ class CharactersListViewModel {
 	}
 
 	func prefetchImages(for indexPaths: [IndexPath]) {
-		let urls = indexPaths
-			.map { self[$0].character.img }
-			.compactMap { URL(string: $0) }
+		let urls = indexPaths.compactMap { self[$0].imageURL }
 		networkManager.prefetch(urls: urls)
 	}
 
@@ -81,7 +79,7 @@ class CharactersListViewModel {
 
 				var seasonMatched = true
 				if let season = season, season != .all {
-					seasonMatched = viewModel.character.appearance.contains(season)
+					seasonMatched = viewModel.appearance.contains(season)
 				}
 
 				return nameMatched && seasonMatched

@@ -14,5 +14,10 @@ class CharacterDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		display()
     }
+
+	private func display() {
+		
+	}
 }

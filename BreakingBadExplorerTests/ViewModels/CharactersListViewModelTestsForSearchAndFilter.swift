@@ -18,12 +18,6 @@ extension CharactersListViewModelTests {
 	3. Text and Season filter
 	*/
 
-	private func getMockCharacters() -> [CharacterViewModel] {
-		try! JSONDecoder()
-			.decode([Character].self, from: MockedData.getCharactersSuccessJSON)
-			.map { CharacterViewModel(character: $0) }
-	}
-
 	func test_WhenSearchWithText_ThenCorrectCaseInsensitiveResultsReturned() {
 		// given
 		let text = "white"

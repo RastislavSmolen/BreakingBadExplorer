@@ -18,7 +18,16 @@ enum Season: Int, Decodable, CaseIterable {
 }
 
 struct Character: Decodable {
+	private enum CodingKeys: String, CodingKey {
+		case id = "char_id"
+		case name, img, appearance, occupation, status, nickname
+	}
+
+	let id: Int
 	let name: String
 	let img: String
 	let appearance: [Season]
+	let occupation: [String]
+	let status: String
+	let nickname: String
 }

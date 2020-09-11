@@ -27,13 +27,12 @@ class CharactersListViewModelTests: XCTestCase {
 		sut = CharactersListViewModel(delegate: delegateStub, viewModels: viewModels, networkManager: mockNetworkManager)
 	}
 
-	private func mockViewModels() -> [CharacterViewModel] {
-		[
-			CharacterViewModel(character: Character(name: "Walter White", img: "https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg", appearance: [.one, .two, .three, .four, .five])),
-			CharacterViewModel(character: Character(name: "Jesse Pinkman", img: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Jesse_Pinkman2.jpg/220px-Jesse_Pinkman2.jpg", appearance: [.one, .two, .three, .four, .five]))
-		]
+	func getMockCharacters() -> [CharacterViewModel] {
+		try! JSONDecoder()
+			.decode([Character].self, from: MockedData.getCharactersSuccessJSON)
+			.map { CharacterViewModel(character: $0) }
 	}
-
+	
 	func test_WhenLoadCharactersIsCalled_ThenCharactersAreLoaded() {
 		// given
 		initialiseSUT()
@@ -70,7 +69,7 @@ class CharactersListViewModelTests: XCTestCase {
 
 	func test_WhenSubscriptUsingIndexPath_ThenReturnsCorrectCharacter() {
 		// given
-		initialiseSUT(viewModels: mockViewModels())
+		initialiseSUT(viewModels: getMockCharacters())
 
 		// when
 		let characterViewModel1 = sut[IndexPath(item: 0, section: 0)]
@@ -83,7 +82,7 @@ class CharactersListViewModelTests: XCTestCase {
 
 	func test_WhenPrefetchImagesIsCalled_ThenItPrefetchesImages() {
 		// given
-		initialiseSUT(viewModels: mockViewModels())
+		initialiseSUT(viewModels: getMockCharacters())
 		let prefetchIndexPath = IndexPath(item: 1, section: 0)
 
 		let exp = expectation(description: "Waiting")
