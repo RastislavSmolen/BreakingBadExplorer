@@ -8,7 +8,8 @@
 
 import Foundation
 
-enum Season: Int, Decodable {
+enum Season: Int, Decodable, CaseIterable {
+	case all = 0
 	case one = 1
 	case two = 2
 	case three = 3

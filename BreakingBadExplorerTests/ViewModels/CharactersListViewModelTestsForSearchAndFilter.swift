@@ -85,7 +85,25 @@ extension CharactersListViewModelTests {
 		wait(for: [exp], timeout: 1)
 	}
 
-	func test_WhenSeasonFilterIsApplied_ThenCorrectResultsReturned() {
+	func test_WhenAllSeasonFilterIsApplied_ThenCorrectResultsReturned() {
+		// given
+		let exp = expectation(description: "Waiting for search results")
+
+		initialiseSUT(viewModels: getMockCharacters())
+
+		delegateStub.didCallSearchResultsUpdated = {
+			// then
+			XCTAssertEqual(self.sut.viewModels.count, 63)
+			exp.fulfill()
+		}
+
+		// when
+		sut.search(text: nil, in: .all)
+
+		wait(for: [exp], timeout: 1)
+	}
+
+	func test_WhenSeasonTwoFilterIsApplied_ThenCorrectResultsReturned() {
 		// given
 		let exp = expectation(description: "Waiting for search results")
 
@@ -103,7 +121,7 @@ extension CharactersListViewModelTests {
 		wait(for: [exp], timeout: 1)
 	}
 
-	func test_WhenSearchTextWithSeasonFilterIsApplied_ThenCorrectResultsReturned() {
+	func test_WhenSearchTextWithSeasonOneFilterIsApplied_ThenCorrectResultsReturned() {
 		let exp = expectation(description: "Waiting for search results")
 		let text = "White"
 		initialiseSUT(viewModels: getMockCharacters())

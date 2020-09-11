@@ -13,6 +13,7 @@ class CharactersListTableViewController: UITableViewController {
 	private struct Constants {
 		static let characterTableViewCell = "CharacterTableViewCell"
 		static let reuseId = "reuseId"
+		static let searchBarPlaceholder = "Search Characters"
 	}
 
 	private lazy var viewModel = CharactersListViewModel(delegate: self)
@@ -32,10 +33,13 @@ class CharactersListTableViewController: UITableViewController {
 	private func setupSearchBar() {
 		searchController.searchResultsUpdater = self
 		searchController.obscuresBackgroundDuringPresentation = false
-		searchController.searchBar.placeholder = "Search Characters"
+		searchController.searchBar.placeholder = Constants.searchBarPlaceholder
 		searchController.automaticallyShowsCancelButton = true
 		navigationItem.searchController = searchController
 		definesPresentationContext = true
+
+		searchController.searchBar.scopeButtonTitles = Season.allCases.map { "\($0)".capitalized }
+		searchController.searchBar.delegate = self
 	}
 
 	// MARK: - Table view data source
@@ -67,7 +71,16 @@ extension CharactersListTableViewController: UITableViewDataSourcePrefetching {
 extension CharactersListTableViewController: UISearchResultsUpdating {
 
 	func updateSearchResults(for searchController: UISearchController) {
-		viewModel.search(text: searchController.searchBar.text, in: nil)
+		let season = Season(rawValue: searchController.searchBar.selectedScopeButtonIndex)
+		viewModel.search(text: searchController.searchBar.text, in: season)
+	}
+}
+
+extension CharactersListTableViewController: UISearchBarDelegate {
+
+	func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+		let season = Season(rawValue: selectedScope)
+		viewModel.search(text: searchBar.text, in: season)
 	}
 }
 

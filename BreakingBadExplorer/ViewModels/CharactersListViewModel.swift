@@ -75,12 +75,12 @@ class CharactersListViewModel {
 				*/
 
 				var nameMatched = true
-				if let text = text?.lowercased() {
+				if let text = text?.lowercased(), text.count > 0 {
 					nameMatched = viewModel.name.lowercased().contains(text)
 				}
 
 				var seasonMatched = true
-				if let season = season {
+				if let season = season, season != .all {
 					seasonMatched = viewModel.character.appearance.contains(season)
 				}
 
