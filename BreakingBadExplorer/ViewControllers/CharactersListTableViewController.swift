@@ -16,6 +16,10 @@ class CharactersListTableViewController: UITableViewController {
 		static let searchBarPlaceholder = "Search Characters"
 	}
 
+	private struct Segues {
+		static let segueDetails = "segueDetails"
+	}
+
 	private lazy var viewModel = CharactersListViewModel(delegate: self)
 	private lazy var searchController = UISearchController(searchResultsController: nil)
 
@@ -54,10 +58,20 @@ class CharactersListTableViewController: UITableViewController {
 		return cell
 	}
 
+	// MARK: - Table view delegate
+
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		performSegue(withIdentifier: Segues.segueDetails, sender: viewModel[indexPath])
+	}
+
 	// MARK: - Navigation
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+		if segue.identifier == Segues.segueDetails,
+			let viewModel = sender as? CharacterViewModel,
+			let vc = segue.destination as? CharacterDetailsViewController {
+			vc.viewModel = viewModel
+		}
 	}
 }
 

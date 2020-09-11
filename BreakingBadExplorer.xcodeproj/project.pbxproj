@@ -17,6 +17,7 @@
 		151FCE23250B71B000E05FEA /* CharactersListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151FCE22250B71B000E05FEA /* CharactersListViewModelTests.swift */; };
 		151FCE25250B76FA00E05FEA /* Walter White.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151FCE24250B76FA00E05FEA /* Walter White.jpg */; };
 		151FCE2D250B858700E05FEA /* CharactersListViewModelTestsForSearchAndFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151FCE2C250B858700E05FEA /* CharactersListViewModelTestsForSearchAndFilter.swift */; };
+		15B0596E250BC50900B66CAD /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B0596D250BC50900B66CAD /* CharacterDetailsViewController.swift */; };
 		15CECE5E250A56B400945845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE5D250A56B400945845 /* AppDelegate.swift */; };
 		15CECE60250A56B400945845 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE5F250A56B400945845 /* SceneDelegate.swift */; };
 		15CECE65250A56B400945845 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15CECE63250A56B400945845 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		151FCE22250B71B000E05FEA /* CharactersListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersListViewModelTests.swift; sourceTree = "<group>"; };
 		151FCE24250B76FA00E05FEA /* Walter White.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Walter White.jpg"; sourceTree = "<group>"; };
 		151FCE2C250B858700E05FEA /* CharactersListViewModelTestsForSearchAndFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModelTestsForSearchAndFilter.swift; sourceTree = "<group>"; };
+		15B0596D250BC50900B66CAD /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
 		15CECE5A250A56B400945845 /* BreakingBadExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15CECE5D250A56B400945845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15CECE5F250A56B400945845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				151FCE0F250A8FE200E05FEA /* CharactersListTableViewController.swift */,
+				15B0596D250BC50900B66CAD /* CharacterDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -215,13 +218,13 @@
 		15CECE5C250A56B400945845 /* BreakingBadExplorer */ = {
 			isa = PBXGroup;
 			children = (
-				151FCE11250A94A900E05FEA /* TableViewCells */,
 				151FCE0C250A8A9600E05FEA /* Delegates */,
 				151FCE0B250A8A8E00E05FEA /* ViewControllers */,
 				151FCE0E250A8F5900E05FEA /* ViewModels */,
 				151FCE0A250A8A8100E05FEA /* NetworkManager */,
 				151FCE09250A8A7C00E05FEA /* Models */,
 				151FCE0D250A8AA000E05FEA /* Storyboards */,
+				151FCE11250A94A900E05FEA /* TableViewCells */,
 				15CECE66250A56B600945845 /* Assets.xcassets */,
 				15CECE6B250A56B600945845 /* Info.plist */,
 			);
@@ -412,6 +415,7 @@
 				15CECE95250A5EA900945845 /* NetworkManager.swift in Sources */,
 				15CECE60250A56B400945845 /* SceneDelegate.swift in Sources */,
 				151FCE14250A94C300E05FEA /* CharacterTableViewCell.swift in Sources */,
+				15B0596E250BC50900B66CAD /* CharacterDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
