@@ -14,6 +14,7 @@
 		151FCE18250A957900E05FEA /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151FCE17250A957900E05FEA /* CharactersListViewModel.swift */; };
 		151FCE1A250A959000E05FEA /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151FCE19250A959000E05FEA /* CharacterViewModel.swift */; };
 		151FCE1D250AA74800E05FEA /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 151FCE1C250AA74800E05FEA /* AlamofireImage */; };
+		151FCE23250B71B000E05FEA /* CharactersListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151FCE22250B71B000E05FEA /* CharactersListViewModelTests.swift */; };
 		15CECE5E250A56B400945845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE5D250A56B400945845 /* AppDelegate.swift */; };
 		15CECE60250A56B400945845 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE5F250A56B400945845 /* SceneDelegate.swift */; };
 		15CECE65250A56B400945845 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15CECE63250A56B400945845 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		151FCE13250A94C300E05FEA /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
 		151FCE17250A957900E05FEA /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
 		151FCE19250A959000E05FEA /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
+		151FCE22250B71B000E05FEA /* CharactersListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersListViewModelTests.swift; sourceTree = "<group>"; };
 		15CECE5A250A56B400945845 /* BreakingBadExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15CECE5D250A56B400945845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15CECE5F250A56B400945845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,14 @@
 			path = CharacterTableViewCell;
 			sourceTree = "<group>";
 		};
+		151FCE21250B719E00E05FEA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				151FCE22250B71B000E05FEA /* CharactersListViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		15CECE51250A56B400945845 = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				15CECE74250A56B700945845 /* BreakingBadExplorerTests.swift */,
+				151FCE21250B719E00E05FEA /* ViewModels */,
 				15CECEA0250A846E00945845 /* NetworkManager */,
 				15CECE76250A56B700945845 /* Info.plist */,
 			);
@@ -401,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				151FCE23250B71B000E05FEA /* CharactersListViewModelTests.swift in Sources */,
 				15CECE91250A5CF100945845 /* NetworkManagerTests.swift in Sources */,
 				15CECE75250A56B700945845 /* BreakingBadExplorerTests.swift in Sources */,
 				15CECE9F250A844F00945845 /* MockedData.swift in Sources */,
