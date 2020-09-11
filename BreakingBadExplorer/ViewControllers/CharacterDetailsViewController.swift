@@ -32,17 +32,15 @@ class CharacterDetailsViewController: UIViewController {
 			let placeholderImage = UIImage(named: "Logo")!
 			imageView.af.setImage(withURL: url, placeholderImage: placeholderImage) { (dataResponse) in
 				guard let image = dataResponse.value else { return }
-				let size = image.size
-				NSLayoutConstraint(item: self.imageView!, attribute: .height, relatedBy: .equal, toItem: self.imageView, attribute: .width, multiplier: size.height/size.width, constant: 0).isActive = true
+				let aspectRatio = image.size.height/image.size.width
+				NSLayoutConstraint(item: self.imageView!, attribute: .height, relatedBy: .equal, toItem: self.imageView, attribute: .width, multiplier: aspectRatio, constant: 0).isActive = true
 			}
 		}
 
 		nameLabel.text = viewModel.name
-		occupationLabel.text = viewModel.occupation.joined(separator: "\n")
+		occupationLabel.text = viewModel.occupationString
 		statusLabel.text = viewModel.status
 		nicknameLabel.text = viewModel.nickname
-		seasonAppearanceLabel.text = viewModel.appearance
-			.compactMap { "\($0)".capitalized }
-			.joined(separator: "\n")
+		seasonAppearanceLabel.text = viewModel.appearanceString
 	}
 }

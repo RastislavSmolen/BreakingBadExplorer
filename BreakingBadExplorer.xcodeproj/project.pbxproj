@@ -18,6 +18,7 @@
 		151FCE25250B76FA00E05FEA /* Walter White.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 151FCE24250B76FA00E05FEA /* Walter White.jpg */; };
 		151FCE2D250B858700E05FEA /* CharactersListViewModelTestsForSearchAndFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151FCE2C250B858700E05FEA /* CharactersListViewModelTestsForSearchAndFilter.swift */; };
 		15B0596E250BC50900B66CAD /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B0596D250BC50900B66CAD /* CharacterDetailsViewController.swift */; };
+		15B05970250BDB2200B66CAD /* CharacterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B0596F250BDB2200B66CAD /* CharacterViewModelTests.swift */; };
 		15CECE5E250A56B400945845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE5D250A56B400945845 /* AppDelegate.swift */; };
 		15CECE60250A56B400945845 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CECE5F250A56B400945845 /* SceneDelegate.swift */; };
 		15CECE65250A56B400945845 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15CECE63250A56B400945845 /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		151FCE24250B76FA00E05FEA /* Walter White.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Walter White.jpg"; sourceTree = "<group>"; };
 		151FCE2C250B858700E05FEA /* CharactersListViewModelTestsForSearchAndFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModelTestsForSearchAndFilter.swift; sourceTree = "<group>"; };
 		15B0596D250BC50900B66CAD /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
+		15B0596F250BDB2200B66CAD /* CharacterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModelTests.swift; sourceTree = "<group>"; };
 		15CECE5A250A56B400945845 /* BreakingBadExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15CECE5D250A56B400945845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15CECE5F250A56B400945845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				151FCE22250B71B000E05FEA /* CharactersListViewModelTests.swift */,
 				151FCE2C250B858700E05FEA /* CharactersListViewModelTestsForSearchAndFilter.swift */,
+				15B0596F250BDB2200B66CAD /* CharacterViewModelTests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			files = (
 				151FCE23250B71B000E05FEA /* CharactersListViewModelTests.swift in Sources */,
 				15CECE91250A5CF100945845 /* NetworkManagerTests.swift in Sources */,
+				15B05970250BDB2200B66CAD /* CharacterViewModelTests.swift in Sources */,
 				15CECE75250A56B700945845 /* BreakingBadExplorerTests.swift in Sources */,
 				15CECE9F250A844F00945845 /* MockedData.swift in Sources */,
 				151FCE2D250B858700E05FEA /* CharactersListViewModelTestsForSearchAndFilter.swift in Sources */,
