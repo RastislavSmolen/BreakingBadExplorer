@@ -10,20 +10,31 @@ import UIKit
 
 class CharactersListTableViewController: UITableViewController {
 
-	private var viewModel = CharactersListViewModel()
+	private struct Constants {
+		static let characterTableViewCell = "CharacterTableViewCell"
+		static let reuseId = "reuseId"
+	}
+
+	private lazy var viewModel = CharactersListViewModel(delegate: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+		let nib = UINib(nibName: Constants.characterTableViewCell, bundle: nil)
+		tableView.register(nib, forCellReuseIdentifier: Constants.reuseId)
+
+		viewModel.loadCharacters()
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+		viewModel.viewModels.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reuseId, for: indexPath) as! CharacterTableViewCell
+		cell.set(viewModel[indexPath])
         return cell
     }
 
@@ -32,4 +43,22 @@ class CharactersListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
     }
+}
+
+extension CharactersListTableViewController: CharactersListViewModelDelegate {
+
+	func loadCharactersSucceeded() {
+		tableView.reloadData()
+	}
+
+	func loadCharactersFailed(with message: String) {
+		// Show alert
+	}
+}
+
+extension CharactersListTableViewController: UITableViewDataSourcePrefetching {
+
+	func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+		viewModel.prefetchImages(for: indexPaths)
+	}
 }

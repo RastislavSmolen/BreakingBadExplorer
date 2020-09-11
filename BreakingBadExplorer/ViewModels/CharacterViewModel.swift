@@ -9,5 +9,15 @@
 import Foundation
 
 struct CharacterViewModel {
+
+	let name: String
+	let imageURL: URL?
 	let character: Character
+
+	init(character: Character) {
+		name = character.name
+		imageURL = URL(string: character.img)
+
+		self.character = character
+	}
 }
