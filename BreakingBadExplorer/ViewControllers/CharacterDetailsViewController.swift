@@ -30,7 +30,11 @@ class CharacterDetailsViewController: UIViewController {
 
 		if let url = viewModel.imageURL {
 			let placeholderImage = UIImage(named: "Logo")!
-			imageView.af.setImage(withURL: url, placeholderImage: placeholderImage)
+			imageView.af.setImage(withURL: url, placeholderImage: placeholderImage) { (dataResponse) in
+				guard let image = dataResponse.value else { return }
+				let size = image.size
+				NSLayoutConstraint(item: self.imageView!, attribute: .height, relatedBy: .equal, toItem: self.imageView, attribute: .width, multiplier: size.height/size.width, constant: 0).isActive = true
+			}
 		}
 
 		nameLabel.text = viewModel.name
