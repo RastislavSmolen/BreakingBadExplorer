@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import BreakingBadExplorer
+@testable import BrBa
 import Alamofire
 import Mocker
 

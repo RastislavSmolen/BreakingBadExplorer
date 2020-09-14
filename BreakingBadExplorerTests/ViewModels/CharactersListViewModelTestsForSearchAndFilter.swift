@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import BreakingBadExplorer
+@testable import BrBa
 
 extension CharactersListViewModelTests {
 
