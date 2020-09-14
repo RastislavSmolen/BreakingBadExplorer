@@ -17,6 +17,9 @@ protocol CharactersListViewModelDelegate {
 class CharactersListViewModel {
 
 	let title = "Characters"
+	var seasonTitles: [String] {
+		Season.allCases.map { $0.shortHand }
+	}
 
 	private let delegate: CharactersListViewModelDelegate
 	private var masterViewModels: [CharacterViewModel]

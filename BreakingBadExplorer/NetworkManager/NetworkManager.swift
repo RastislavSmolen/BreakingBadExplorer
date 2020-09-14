@@ -29,12 +29,14 @@ class NetworkManager {
 
 	let session: Session
 
-	init(session: Session = Session.default) {
+	init(session: Session = .default) {
 		self.session = session
 	}
 
 	func getCharacters(_ completion: @escaping (Result<[Character], APIError>) -> Void) {
-		session.request(Endpoint.characters.url)
+		var request = URLRequest(url: Endpoint.characters.url)
+		request.cachePolicy = .returnCacheDataElseLoad
+		session.request(request)
 			.responseDecodable(of: [Character].self) { response in
 				switch response.result {
 				case .success(let characters):

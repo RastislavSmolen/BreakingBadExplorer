@@ -97,6 +97,19 @@ class CharactersListViewModelTests: XCTestCase {
 
 		wait(for: [exp], timeout: 1)
 	}
+
+	func test_SeasonTitles() {
+		// given && when
+		initialiseSUT()
+
+		// then
+		XCTAssertEqual(sut.seasonTitles[0], "All")
+		XCTAssertEqual(sut.seasonTitles[1], "S1")
+		XCTAssertEqual(sut.seasonTitles[2], "S2")
+		XCTAssertEqual(sut.seasonTitles[3], "S3")
+		XCTAssertEqual(sut.seasonTitles[4], "S4")
+		XCTAssertEqual(sut.seasonTitles[5], "S5")
+	}
 }
 
 class MockNetworkManager: NetworkManager {

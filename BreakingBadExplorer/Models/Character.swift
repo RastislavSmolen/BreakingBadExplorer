@@ -15,6 +15,11 @@ enum Season: Int, Decodable, CaseIterable {
 	case three = 3
 	case four = 4
 	case five = 5
+
+	var shortHand: String {
+		guard self != .all else { return "All" }
+		return "S\(rawValue)"
+	}
 }
 
 struct Character: Decodable {
